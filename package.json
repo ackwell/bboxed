@@ -1,0 +1,25 @@
+{
+  "name": "bboxer",
+  "version": "0.0.0",
+  "description": "An extensible bbcode parser for node.js",
+  "main": "lib/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ackwell/bboxer.git"
+  },
+  "keywords": [
+    "bbcode",
+    "parser"
+  ],
+  "author": "ackwell",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/ackwell/bboxer/issues"
+  }
+}
