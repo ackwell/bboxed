@@ -18,7 +18,7 @@
     "parser"
   ],
   "author": "ackwell",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ackwell/bboxer/issues"
   },
