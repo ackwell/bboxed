@@ -2,7 +2,7 @@
   "name": "bboxer",
   "version": "0.0.0",
   "description": "An extensible bbcode parser for node.js",
-  "main": "lib/main.js",
+  "main": "lib/bboxer.js",
   "directories": {
     "test": "test"
   },
