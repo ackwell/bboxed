@@ -8,12 +8,11 @@ describe('Lexer', function() {
 		});
 
 		it('handle single tags', function() {
-			Lexer.tokenise('[tag]').should.eql([{
+			Lexer.tokenise('[tag]')[0].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: false
-			, argument: undefined
-			}]);
+			});
 		});
 
 		it('ignore empty brackets', function() {
@@ -24,54 +23,55 @@ describe('Lexer', function() {
 		});
 
 		it('handle closing tags', function() {
-			Lexer.tokenise('[tag][/tag]').should.eql([{
+			var result = Lexer.tokenise('[tag][/tag]');
+			result[0].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: false
-			, argument: undefined
-			}, {
+			});
+			result[1].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: true
-			, argument: undefined
-			}]);
+			});
 		});
 
 		it('handles encapsulated text', function() {
-			Lexer.tokenise('[tag]text[/tag]').should.eql([{
+			var result = Lexer.tokenise('[tag]text[/tag]');
+			result[0].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: false
-			, argument: undefined
-			}, {
+			});
+			result[1].should.contain({
 			  type: 'text'
 			, text: 'text'
-			}, {
+			});
+			result[2].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: true
-			, argument: undefined
-			}]);
+			});
 		});
 
 		it('handle tag arguments', function() {
-			Lexer.tokenise('[tag=argument]').should.eql([{
+			Lexer.tokenise('[tag=argument]')[0].should.contain({
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: false
 			, argument: 'argument'
-			}]);
+			});
 		});
 
 		it('handle quoted arguments', function() {
-			var expect = [{
+			var expect = {
 			  type: 'tag'
 			, tag: 'tag'
 			, closing: false
 			, argument: 'multi word'
-			}];
-			Lexer.tokenise('[tag="multi word"]').should.eql(expect);
-			Lexer.tokenise('[tag=\'multi word\']').should.eql(expect);
+			};
+			Lexer.tokenise('[tag="multi word"]')[0].should.contain(expect);
+			Lexer.tokenise('[tag=\'multi word\']')[0].should.contain(expect);
 		});
 	});
 });
