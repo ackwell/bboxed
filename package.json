@@ -21,5 +21,9 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/ackwell/bboxer/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.16.1",
+    "should": "~2.1.1"
   }
 }
