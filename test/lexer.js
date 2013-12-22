@@ -40,7 +40,6 @@ describe('Lexer', function() {
 			var result = Lexer.tokenise('[tag]text[/tag]');
 			result[0].should.contain({
 				type: 'tag',
-				tag: 'tag',
 				closing: false
 			});
 			result[1].should.contain({
@@ -49,29 +48,28 @@ describe('Lexer', function() {
 			});
 			result[2].should.contain({
 				type: 'tag',
-				tag: 'tag',
 				closing: true
 			});
 		});
 
 		it('handles tag arguments', function() {
 			Lexer.tokenise('[tag=argument]')[0].should.contain({
-				type: 'tag',
-				tag: 'tag',
-				closing: false,
-				argument: 'argument'
+				arguments: {tag: 'argument'}
 			});
 		});
 
 		it('handles quoted arguments', function() {
 			var expect = {
-				type: 'tag',
-				tag: 'tag',
-				closing: false,
-				argument: 'multi word'
+				arguments: {tag: 'multi word'}
 			};
 			Lexer.tokenise('[tag="multi word"]')[0].should.contain(expect);
 			Lexer.tokenise('[tag=\'multi word\']')[0].should.contain(expect);
+		});
+
+		it('handles multiple arguments', function() {
+			Lexer.tokenise('[tag=tag one=one two=\'two\' three="three"]')[0].should.contain({
+				arguments: {tag: 'tag', one: 'one', two: 'two', three: 'three'}
+			})
 		});
 
 		it('handles nested tags', function() {
