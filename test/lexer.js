@@ -3,11 +3,11 @@ var should = require('should')
 
 describe('Lexer', function() {
 	describe('.tokenise()', function() {
-		it('return an empty array when an empty string is passed', function() {
+		it('returns an empty array when an empty string is passed', function() {
 			Lexer.tokenise('').should.eql([]);
 		});
 
-		it('handle single tags', function() {
+		it('handles single tags', function() {
 			Lexer.tokenise('[tag]')[0].should.contain({
 				type: 'tag',
 				tag: 'tag',
@@ -15,14 +15,14 @@ describe('Lexer', function() {
 			});
 		});
 
-		it('ignore empty brackets', function() {
+		it('ignores empty brackets', function() {
 			Lexer.tokenise('text [] text').should.eql([{
 				type: 'text',
 				text: 'text [] text'
 			}]);
 		});
 
-		it('handle closing tags', function() {
+		it('handles closing tags', function() {
 			var result = Lexer.tokenise('[tag][/tag]');
 			result[0].should.contain({
 				type: 'tag',
@@ -54,7 +54,7 @@ describe('Lexer', function() {
 			});
 		});
 
-		it('handle tag arguments', function() {
+		it('handles tag arguments', function() {
 			Lexer.tokenise('[tag=argument]')[0].should.contain({
 				type: 'tag',
 				tag: 'tag',
@@ -63,7 +63,7 @@ describe('Lexer', function() {
 			});
 		});
 
-		it('handle quoted arguments', function() {
+		it('handles quoted arguments', function() {
 			var expect = {
 				type: 'tag',
 				tag: 'tag',
@@ -72,6 +72,30 @@ describe('Lexer', function() {
 			};
 			Lexer.tokenise('[tag="multi word"]')[0].should.contain(expect);
 			Lexer.tokenise('[tag=\'multi word\']')[0].should.contain(expect);
+		});
+
+		it('handles nested tags', function() {
+			var result = Lexer.tokenise('[outer][inner]text[/inner][/outer]');
+			result[0].should.contain({
+				tag: 'outer',
+				closing: false
+			});
+			result[1].should.contain({
+				tag: 'inner',
+				closing: false
+			});
+			result[2].should.contain({
+				type: 'text',
+				text: 'text'
+			});
+			result[3].should.contain({
+				tag: 'inner',
+				closing: true
+			});
+			result[4].should.contain({
+				tag: 'outer',
+				closing: true
+			});
 		});
 	});
 });
