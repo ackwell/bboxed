@@ -20,12 +20,14 @@ describe('io', function() {
 		});
 
 	for (var i = 0; i < files.length; i++) {
-		var file = path.join(dir, files[i])
-			, bbcode = fs.readFileSync(file, 'utf8')
-			, html = fs.readFileSync(file.replace(/\..+$/, '') + '.html', 'utf8');
+		(function(file) {
+			var file = path.join(dir, file)
+				, bbcode = fs.readFileSync(file, 'utf8')
+				, html = fs.readFileSync(file.replace(/\..+$/, '') + '.html', 'utf8');
 
-		it(files[i].replace(/\..+$/,''), function() {
-			bboxed(bbcode).should.equal(html);
-		});
+			it(files[i].replace(/\..+$/,''), function() {
+				bboxed(bbcode).should.equal(html);
+			});
+		})(files[i]);
 	}
 });

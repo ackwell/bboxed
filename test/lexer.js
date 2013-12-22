@@ -1,5 +1,5 @@
 var should = require('should')
-  , Lexer = require('../lib/bboxed').Lexer
+		Lexer = require('../lib/bboxed').Lexer
 
 describe('Lexer', function() {
 	describe('.tokenise()', function() {
@@ -9,66 +9,66 @@ describe('Lexer', function() {
 
 		it('handle single tags', function() {
 			Lexer.tokenise('[tag]')[0].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: false
+				type: 'tag',
+				tag: 'tag',
+				closing: false
 			});
 		});
 
 		it('ignore empty brackets', function() {
 			Lexer.tokenise('text [] text').should.eql([{
-			  type: 'text'
-			, text: 'text [] text'
+				type: 'text',
+				text: 'text [] text'
 			}]);
 		});
 
 		it('handle closing tags', function() {
 			var result = Lexer.tokenise('[tag][/tag]');
 			result[0].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: false
+				type: 'tag',
+				tag: 'tag',
+				closing: false
 			});
 			result[1].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: true
+				type: 'tag',
+				tag: 'tag',
+				closing: true
 			});
 		});
 
 		it('handles encapsulated text', function() {
 			var result = Lexer.tokenise('[tag]text[/tag]');
 			result[0].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: false
+				type: 'tag',
+				tag: 'tag',
+				closing: false
 			});
 			result[1].should.contain({
-			  type: 'text'
-			, text: 'text'
+				type: 'text',
+				text: 'text'
 			});
 			result[2].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: true
+				type: 'tag',
+				tag: 'tag',
+				closing: true
 			});
 		});
 
 		it('handle tag arguments', function() {
 			Lexer.tokenise('[tag=argument]')[0].should.contain({
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: false
-			, argument: 'argument'
+				type: 'tag',
+				tag: 'tag',
+				closing: false,
+				argument: 'argument'
 			});
 		});
 
 		it('handle quoted arguments', function() {
 			var expect = {
-			  type: 'tag'
-			, tag: 'tag'
-			, closing: false
-			, argument: 'multi word'
+				type: 'tag',
+				tag: 'tag',
+				closing: false,
+				argument: 'multi word'
 			};
 			Lexer.tokenise('[tag="multi word"]')[0].should.contain(expect);
 			Lexer.tokenise('[tag=\'multi word\']')[0].should.contain(expect);
