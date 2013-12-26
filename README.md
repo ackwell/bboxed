@@ -1,4 +1,4 @@
-# bboxed [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed)
+# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed)
 
 An extensible `[bbcode]` parser for node.js. (And other platforms once it's running nicely)
 
@@ -16,6 +16,7 @@ If you like things to Just Work™:
 console.log(bboxed('Bboxing [i]Bbcode[/i]'));
 // Output: Bboxing <em>Bbcode</em>
 ```
+### Options
 
 Some tags, such as `[size]` support options. Default options can be overwitten
 with `.setTagOption(s)`:
@@ -31,6 +32,53 @@ bboxed.setTagOptions('size', {
 // Set one setting at a time
 bboxed.setTagOptions('size', 'min', 20);
 // etc...
+```
+
+### Adding your own tags
+
+Want a custom tag? Just add it!
+
+**Basic usage:**
+
+```js
+// An object of {name: tag} can also be passed to create multiple at once
+bboxed.addTag('comment', {
+	open: '<!--',
+	close: '-->'
+});
+console.log(bboxed('[comment]Commented[/comment]'));
+// Output: <!--Commented-->
+```
+
+**Advanced usage:**
+
+```js
+// This is a nonsensical tag, demonstrating the interface, and won't do anything.
+bboxed.setTagOption('example', 'changed', 'This has been changed');
+bboxed.addTag('example', {
+	open: function(token, options) {
+		// The below is based on this example: [example=tag arg=argument]Interior[/example]
+		token.arguments.tag; // 'tag'
+		token.arguments.arg; // 'argument'
+	
+		token.interior; // 'Interior'
+
+		options.changed; // 'This has been changed'
+		options.notChanged; // 'This will not be changed'
+	
+		// Returning false in either open or close signifies that there was a failure.
+		// Failed tags will be left unparsed.
+		return false;
+
+		// Return a string to signify success, and render it.
+		return '<someTag>';
+	},
+	close: '</someTag>',
+	options: {
+		changed: 'This will be changed',
+		notChanged: 'This will not be changed'
+	}
+});
 ```
 
 ## Developing
