@@ -49,6 +49,7 @@ If you add a new feature, make sure to add tests for it.
 * Lists
 * Tables
 * Settings for [img]?
+* Settings for [url]? (Stuff like target="_blank")
 * Add support for non-node.js systems.
 
 ## License
