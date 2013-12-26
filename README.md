@@ -46,7 +46,6 @@ If you add a new feature, make sure to add tests for it.
 
 ### To-do
 
-* Ability to add additional tags
 * Lists
 * Tables
 * Settings for [img]?
