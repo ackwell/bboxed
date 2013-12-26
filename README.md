@@ -1,4 +1,4 @@
-# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed)
+# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed) [![NPM version](https://badge.fury.io/js/bboxer.png)](http://badge.fury.io/js/bboxer)
 
 An extensible `[bbcode]` parser for node.js. (And other platforms once it's running nicely)
 
@@ -7,7 +7,7 @@ Hat tips to [marked](https://github.com/chjj/marked/), from which I've borrowed 
 ## Installing
 
 **Warning:** Though most of the module is complete, there are sections that remain
-incomplete, and may result in breaking changes. It should be stable, but I'd suggest pinpointing the version pretty precisely in yuour package.json.
+incomplete, and may result in breaking changes. It should be stable, but I'd suggest pinpointing the version pretty precisely in your package.json.
 
 ```sh
 $ npm install bboxed
