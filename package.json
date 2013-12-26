@@ -27,6 +27,6 @@
     "should": "~2.1.1"
   },
   "dependencies": {
-    "escape-html": "~1.0.1"
+    "validator": "~2.0.0"
   }
 }
