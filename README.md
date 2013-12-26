@@ -94,11 +94,14 @@ If you add a new feature, make sure to add tests for it.
 
 ### To-do
 
-* Lists
+In no particular order:
+
+* Lists (will require changes to the parser for [*])
 * Tables
 * Settings for [img]?
 * Settings for [url]? (Stuff like target="_blank")
 * Add support for non-node.js systems.
+* Parser options
 
 ## License
 
