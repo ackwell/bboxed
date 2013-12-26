@@ -120,7 +120,6 @@ If you add a new feature, make sure to add tests for it.
 
 In no particular order:
 
-* **Priority:** I forgot to implement single tags. Whoops. Fix it.
 * Lists (will require changes to the parser for [*])
 * Tables
 * Settings for [img]?
@@ -129,7 +128,10 @@ In no particular order:
 
 ## Changelog
 
-* **v0.1.0**: Initial release
+* **v0.2.0:**
+	* Added parser options
+	* Added support for single tags
+* **v0.1.0:** Initial release
 
 ## License
 
