@@ -50,6 +50,7 @@ If you add a new feature, make sure to add tests for it.
 * Lists
 * Tables
 * Settings for [img]?
+* Add support for non-node.js systems.
 
 ## License
 
