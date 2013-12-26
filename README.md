@@ -6,7 +6,12 @@ Hat tips to [marked](https://github.com/chjj/marked/), from which I've borrowed 
 
 ## Installing
 
-It's not finished yet. Stop that.
+**Warning:** Though most of the module is complete, there are sections that remain
+incomplete, and may result in breaking changes. It should be stable, but I'd suggest pinpointing the version pretty precisely in yuour package.json.
+
+```sh
+$ npm install bboxed
+```
 
 ## Using
 

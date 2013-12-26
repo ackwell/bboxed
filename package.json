@@ -1,6 +1,6 @@
 {
   "name": "bboxer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An extensible bbcode parser for node.js",
   "main": "lib/bboxer.js",
   "directories": {
@@ -17,7 +17,7 @@
     "bbcode",
     "parser"
   ],
-  "author": "ackwell",
+  "author": "Saxon Landers <saxon@ackwell.com.au>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ackwell/bboxer/issues"
