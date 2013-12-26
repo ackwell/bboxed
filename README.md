@@ -18,7 +18,7 @@ console.log(bboxed('Bboxing [i]Bbcode[/i]'));
 ```
 
 Some tags, such as `[size]` support options. Default options can be overwitten
-with `.setTagOptions`:
+with `.setTagOption(s)`:
 
 ```js
 // Set multiple settings
@@ -44,6 +44,31 @@ $ npm install
 Before sending a pull request, make sure it is passing the tests with `npm test`.
 If you add a new feature, make sure to add tests for it.
 
+### To-do
+
+* Ability to add additional tags
+* Lists
+* Tables
+* Settings for [img]?
+
 ## License
 
-I suppose I should add a license text in.
+Copyright (c) 2013 Saxon Landers <saxon@ackwell.com.au>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
