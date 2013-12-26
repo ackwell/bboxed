@@ -23,7 +23,26 @@ console.log(bboxed('Bboxing [i]Bbcode[/i]'));
 ```
 ### Options
 
-Some tags, such as `[size]` support options. Default options can be overwitten
+For a list of all avaliable options, check [this wiki page](COME ON OPTUS I CAN'T MAKE IT UNTIL YOU FIX YOUR NETWORK).
+
+#### Parser
+
+Parsing options can be set with `.setOption(s)`, or can be passed to the `bboxed` function.
+
+```js
+// All three examples do the same thing
+bboxed.setOption('key', 'value');
+bboxed('Some text');
+
+bboxed.setOptions({key: 'value'});
+bboxed('Some text');
+
+bboxed('Some text', {key: 'value'});
+```
+
+#### Tags
+
+Some tags (such as `[size]`) support options. Default options can be overwitten
 with `.setTagOption(s)`:
 
 ```js
@@ -35,15 +54,15 @@ bboxed.setTagOptions('size', {
 });
 
 // Set one setting at a time
-bboxed.setTagOptions('size', 'min', 20);
+bboxed.setTagOption('size', 'min', 20);
 // etc...
 ```
 
 ### Adding your own tags
 
-Want a custom tag? Just add it!
+Want a custom tag? Just add it with `.addTag(s)`!
 
-**Basic usage:**
+#### Basic usage
 
 ```js
 // An object of {name: tag} can also be passed to create multiple at once
@@ -55,10 +74,10 @@ console.log(bboxed('[comment]Commented[/comment]'));
 // Output: <!--Commented-->
 ```
 
-**Advanced usage:**
+#### Advanced usage
 
 ```js
-// This is a nonsensical tag, demonstrating the interface, and won't do anything.
+// This is a nonsensical tag demonstrating the interface, and won't do anything.
 bboxed.setTagOption('example', 'changed', 'This has been changed');
 bboxed.addTag('example', {
 	open: function(token, options) {
@@ -101,12 +120,16 @@ If you add a new feature, make sure to add tests for it.
 
 In no particular order:
 
+* **Priority:** I forgot to implement single tags. Whoops. Fix it.
 * Lists (will require changes to the parser for [*])
 * Tables
 * Settings for [img]?
 * Settings for [url]? (Stuff like target="_blank")
 * Add support for non-node.js systems.
-* Parser options
+
+## Changelog
+
+* **v0.1.0**: Initial release
 
 ## License
 
