@@ -1,7 +1,8 @@
 {
   "name": "bboxer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An extensible bbcode parser for node.js",
+  "homepage": "https://github.com/ackwell/bboxer",
   "main": "lib/bboxer.js",
   "directories": {
     "test": "test"
