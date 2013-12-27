@@ -1,4 +1,4 @@
-# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed) [![NPM version](https://badge.fury.io/js/bboxer.png)](http://badge.fury.io/js/bboxer)
+# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed) [![NPM version](https://badge.fury.io/js/bboxed.png)](http://badge.fury.io/js/bboxed)
 
 An extensible `[bbcode]` parser for node.js. (And other platforms once it's running nicely)
 
