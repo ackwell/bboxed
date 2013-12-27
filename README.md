@@ -23,7 +23,7 @@ console.log(bboxed('Bboxing [i]Bbcode[/i]'));
 ```
 ### Options
 
-For a list of all avaliable options, check [this wiki page](COME ON OPTUS I CAN'T MAKE IT UNTIL YOU FIX YOUR NETWORK).
+For a list of all avaliable options, check [this wiki page](https://github.com/ackwell/bboxed/wiki/Options).
 
 #### Parser
 
