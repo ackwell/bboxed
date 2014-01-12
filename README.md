@@ -128,6 +128,10 @@ In no particular order:
 
 ## Changelog
 
+* **v0.2.2:**
+	* Fixed invalid single tag errors
+	* Improved argument regex to allow more characters
+	* Added a target option for `[url]` tags
 * **v0.2.1:**
 	* Fixed inifinite loop bug with non-alphanumeric tags (`[=]`, for example)
 * **v0.2.0:**
