@@ -128,6 +128,8 @@ In no particular order:
 
 ## Changelog
 
+* **v0.2.1:**
+	* Fixed inifinite loop bug with non-alphanumeric tags (`[=]`, for example)
 * **v0.2.0:**
 	* Added parser options
 	* Added support for single tags
