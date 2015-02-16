@@ -1,4 +1,4 @@
-# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed) [![NPM version](https://badge.fury.io/js/bboxed.png)](http://badge.fury.io/js/bboxed)
+﻿# [bboxed] [![Build Status](https://travis-ci.org/ackwell/bboxed.png?branch=master)](https://travis-ci.org/ackwell/bboxed) [![NPM version](https://badge.fury.io/js/bboxed.png)](http://badge.fury.io/js/bboxed)
 
 An extensible `[bbcode]` parser for node.js. (And other platforms once it's running nicely)
 
@@ -120,7 +120,6 @@ If you add a new feature, make sure to add tests for it.
 
 In no particular order:
 
-* Lists (will require changes to the parser for [*])
 * Tables
 * Settings for [img]?
 * Settings for [url]? (Stuff like target="_blank")
@@ -128,6 +127,8 @@ In no particular order:
 
 ## Changelog
 
+* **v0.3.1:**
+	* Added list support [#] and [*] and some list tests for robustness
 * **v0.2.2:**
 	* Fixed invalid single tag errors
 	* Improved argument regex to allow more characters
