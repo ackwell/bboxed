@@ -127,6 +127,8 @@ In no particular order:
 
 ## Changelog
 
+* **v0.4.0:**
+	* Added support for [sup] and [sub]
 * **v0.3.1:**
 	* Added list support [#] and [*] and some list tests for robustness
 * **v0.2.2:**
