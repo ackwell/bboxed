@@ -19,4 +19,12 @@ describe('Parser', function() {
 			bboxed('[url=invalid]text[/url]', opts).should.equal('text');
 		});
 	});
+
+	describe('noDefaultTags: true', function() {
+		var opts = {noDefaultTags: true};
+
+		it('does not include default tags', function() {
+			bboxed('[b]text[/b]', opts).should.equal('[b]text[/b]');
+		});
+	});
 });

@@ -127,6 +127,8 @@ In no particular order:
 
 ## Changelog
 
+* **v0.4.1:**
+	* Added `noDefaultTags` option
 * **v0.4.0:**
 	* Added support for [sup] and [sub]
 * **v0.3.1:**
