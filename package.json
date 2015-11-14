@@ -1,6 +1,6 @@
 {
   "name": "bboxed",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "An extensible bbcode parser for node.js",
   "homepage": "https://github.com/ackwell/bboxed",
   "main": "lib/bboxed.js",
