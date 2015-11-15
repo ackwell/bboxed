@@ -26,5 +26,10 @@ describe('Parser', function() {
 		it('does not include default tags', function() {
 			bboxed('[b]text[/b]', opts).should.equal('[b]text[/b]');
 		});
+
+		it('does not impede on addTag', function() {
+			bboxed.addTag('comment', {open: '<!--', close: '-->'});
+			bboxed('[comment]text[/comment]', opts).should.equal('<!--text-->');
+		});
 	});
 });
